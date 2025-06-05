@@ -1,0 +1,20 @@
+name = "blog-api"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+[vars]
+# Environment variables (non-sensitive)
+NODE_ENV = "production"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "bdhub"
+database_id = "e9145e05-87d6-473d-a90d-ac2a0e8e398c"
+
+# For development
+[env.development]
+name = "bdhub"
+[[env.development.d1_databases]]
+binding = "DB"
+database_name = "bdhub"
+database_id = "e9145e05-87d6-473d-a90d-ac2a0e8e398c"
