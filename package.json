@@ -1,0 +1,42 @@
+{
+  "name": "blog-api-worker",
+  "version": "1.0.0",
+  "description": "Professional Blog API built with Cloudflare Workers and D1",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "build": "tsc",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "eslint src --ext .ts",
+    "db:create": "wrangler d1 create blog-db",
+    "db:init": "wrangler d1 execute blog-db --file=./schema.sql",
+    "db:seed": "wrangler d1 execute blog-db --file=./seed.sql",
+    "test": "vitest"
+  },
+  "keywords": [
+    "cloudflare",
+    "workers",
+    "blog",
+    "api",
+    "d1",
+    "typescript"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20231218.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^1.0.0",
+    "wrangler": "^3.0.0"
+  },
+  "dependencies": {
+    "hono": "^3.12.0",
+    "zod": "^3.22.0"
+  }
+}
